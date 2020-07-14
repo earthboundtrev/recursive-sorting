@@ -1,5 +1,4 @@
 import math
-# import ipdb
 # TO-DO: Implement a recursive implementation of binary search
 def binary_search(arr, target, start, end):
     mid = math.floor(((end+start)/2))
@@ -7,7 +6,6 @@ def binary_search(arr, target, start, end):
     if start == end+1:
         return -1
 
-    # ipdb.set_trace()
     if mid == end-1 or start+1 == mid:
         return mid
     else:
@@ -20,9 +18,6 @@ def binary_search(arr, target, start, end):
         return binary_search(arr, target, start, end)
 
     return -1
-
-# arr1 = [-9, -8, -6, -4, -3, -2, 0, 1, 2, 3, 5, 7, 8, 9]
-# binary_search(arr1, 0, 0, len(arr1)-1)
 
 
 # STRETCH: implement an order-agnostic binary search
