@@ -4,33 +4,30 @@ def merge(arrA, arrB):
     elements = len(arrA) + len(arrB)
     merged_arr = [0] * elements
 
+    second_addition_size = elements - len(arrB)
+
     # Your code here
-    starting_point = 0
+    # ipdb.set_trace()
     counter = 0
     for i in range(0, len(arrA)):
-        # ipdb.set_trace()
-        if(counter >= elements):
-            counter = 0
-        for j in range(0, len(arrB)):
+        merged_arr[i] = arrA[i]
+        print("This is the value of i:", i)
+        counter = counter+1
+    for j in range(0, len(arrB)):
+        merged_arr[counter] = arrB[j]
+        counter = counter+1
+        print("This is the value of j:", j)
 
-            print("Merged_arr value:", merged_arr[starting_point])
-            counter=counter+1
-            print("This is the counter:", counter)
-            print("Counter value:", counter, "arr[A] value:", arrA[i], "arr[B] value:", arrB[j])
-            if counter == len(arrB):
-                starting_point=starting_point+1
-                print("This is the starting_point: ", starting_point)
-
-            if(arrA[i] < arrB[j]):
-                merged_arr[starting_point] = arrA[i]
-            else:
-                merged_arr[starting_point] = arrB[j]
-                
-
+    for i in range(0, (len(merged_arr))):
+        for j in range(0, (len(merged_arr))):
+            if merged_arr[i] < merged_arr[j]:
+                temp_variable = merged_arr[i]
+                merged_arr[i] = merged_arr[j]
+                merged_arr[j] = temp_variable
 
     return merged_arr
-arrA = [2,3,4]
-arrB = [5,6,7]
+arrB= [2,3,4]
+arrA = [5,6,7]
 
 print(merge(arrA, arrB))
 
