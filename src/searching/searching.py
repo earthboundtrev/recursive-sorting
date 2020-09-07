@@ -3,19 +3,16 @@ import math
 def binary_search(arr, target, start, end):
     mid = math.floor(((end+start)/2))
 
-    if start == end+1:
+    if len(arr)==0:
         return -1
 
-    if mid == end-1 or start+1 == mid:
-        return mid
     else:
         if(target < arr[mid]):
-            end = mid
+            return binary_search(arr, target, start, mid)
         elif(target == arr[mid]):
             return mid
         else:
-            start = mid
-        return binary_search(arr, target, start, end)
+            return binary_search(arr, target, mid, end)
 
     return -1
 

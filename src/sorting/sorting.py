@@ -11,12 +11,10 @@ def merge(arrA, arrB):
     counter = 0
     for i in range(0, len(arrA)):
         merged_arr[i] = arrA[i]
-        print("This is the value of i:", i)
         counter = counter+1
     for j in range(0, len(arrB)):
         merged_arr[counter] = arrB[j]
         counter = counter+1
-        print("This is the value of j:", j)
 
     for i in range(0, (len(merged_arr))):
         for j in range(0, (len(merged_arr))):
@@ -26,8 +24,8 @@ def merge(arrA, arrB):
                 merged_arr[j] = temp_variable
 
     return merged_arr
-arrB= [2,3,4]
-arrA = [5,6,7]
+arrB=[0,2,4]
+arrA = [1,3,5]
 
 print(merge(arrA, arrB))
 
