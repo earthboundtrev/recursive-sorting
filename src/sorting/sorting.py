@@ -1,3 +1,4 @@
+import math
 # import ipdb
 # TO-DO: complete the helper function below to merge 2 sorted arrays
 def merge(arrA, arrB):
@@ -35,11 +36,14 @@ def merge_sort(arr):
 
     start = 0
     end = len(arr)-1
-    mid = ((start+end/2))
+    mid = math.floor(((start+end/2)))
 
-    new_list1=[]
-    new_list2=[]
-
+    if len(arr) == 0:
+        return arr
+    
+    else:
+        if len(arr) > 0:
+            arr = merge(arr[start:mid], arr[mid:])
 
     return arr
 
