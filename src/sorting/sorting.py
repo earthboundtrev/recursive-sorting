@@ -34,16 +34,21 @@ print(merge(arrA, arrB))
 def merge_sort(arr):
     # Your code here
 
-    start = 0
-    end = len(arr)-1
-    mid = math.floor(((start+end/2)))
+    mid = math.floor(((len(arr)/2)))
+    left_arr=arr[:mid]
+    right_arr=arr[mid:]
 
     if len(arr) == 0:
         return arr
     
     else:
-        if len(arr) > 0:
-            arr = merge(arr[start:mid], arr[mid:])
+        if len(arr) == 1:
+            return arr
+        else:
+            left_arr=merge_sort(left_arr)
+            right_arr=merge_sort(right_arr)
+            arr=merge(left_arr, right_arr)
+
 
     return arr
 
